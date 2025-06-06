@@ -211,7 +211,7 @@ rm_option_init (struct rm_options *x)
 int
 main (int argc, char **argv)
 {
-  bool preserve_root = true;
+  bool preserve_root = false;
   struct rm_options x;
   bool prompt_once = false;
   int c;
@@ -305,7 +305,7 @@ main (int argc, char **argv)
           if (optarg)
             {
               if STREQ (optarg, "all")
-                x.preserve_all_root = true;
+                x.preserve_all_root = false;
               else
                 error (EXIT_FAILURE, 0,
                        _("unrecognized --preserve-root argument: %s"),
